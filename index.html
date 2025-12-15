@@ -67,7 +67,23 @@ function norm(s) {
     .replace(/\s+/g,"")
     .toLowerCase();
 }
+const DISPLAY_NAMES = {
+  "panama": "Panamá",
+  "colon": "Colón",
+  "bocasdeltoro": "Bocas del Toro",
+  "chiriqui": "Chiriquí",
+  "cocle": "Coclé",
+  "veraguas": "Veraguas",
+  "lossantos": "Los Santos",
+  "herrera": "Herrera",
+  "darien": "Darién",
+  "panamaoeste": "Panamá Oeste",
+  "embera": "Emberá-Wounaan",
+  "ngobebugle": "Ngöbe-Buglé"
+};
+  const title = DISPLAY_NAMES[key] || key;
 
+  
 const HOTSPOTS = {
   "panama": [
     "Panama City (Urban): Metropolitan Natural Park, Parque Omar, Cinta Costera / Panama Bay, Cerro Ancón (raptor migration)",
@@ -147,6 +163,8 @@ L.geoJSON(PROVINCES, {
   onEachFeature: (f, l) => {
     const display = f.properties?.NAME_1 || f.properties?.name || "Province";
     const key = norm(display);
+    const title = DISPLAY_NAMES[key] || display;
+
     l.on("click", e => {
       const list = HOTSPOTS[key] || ["No hotspots listed yet for this name."];
       const badge = (key === "panama" || key === "colon")
@@ -155,7 +173,7 @@ L.geoJSON(PROVINCES, {
       const items = list.map(x => `<li>${x}</li>`).join("");
       L.popup({ maxWidth: 560 })
         .setLatLng(e.latlng)
-        .setContent(`<div class="province-title">${display}</div>${badge}<ul>${items}</ul>`)
+        .setContent(`<div class="province-title">${title}</div>${badge}<ul>${items}</ul>`)
         .openOn(map);
     });
     l.on("mouseover", () => l.setStyle({ fillOpacity: 0.55, weight: 2 }));
