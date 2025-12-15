@@ -68,6 +68,9 @@ Click a province (or comarca) to see key birding hotspots.
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.css">
+<script src="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.js"></script>
+
 <script>
 
  const PROVINCE_NAMES = {
@@ -190,8 +193,15 @@ const map = L.map("map", {
   maxBounds: [[6.7, -83.4], [9.9, -77.0]],
   maxBoundsViscosity: 1.0,
   minZoom: 7,
-  maxZoom: 12
+  maxZoom: 12,
+
+  fullscreenControl: true,
+  fullscreenControlOptions: {
+    position: 'topright'
+  }
+
 }).setView([8.6, -80.0], 7);
+
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors"
