@@ -241,14 +241,16 @@ L.geoJSON(PROVINCES, {
       const badge = (key === "panama" || key === "colon")
         ? '<div class="badge">Canal Zone sites are shared between Panamá & Colón</div>'
         : '';
-      const items = list.map(x => `<li>${x}</li>`).join("");
-      L.popup({ maxWidth: 560 })
-        .setLatLng(map.getCenter())
-        .setContent(
-  `<div class="province-title">${PROVINCE_NAMES[key] || display}</div>${badge}<ul>${items}</ul>`
-)
+      const center = map.getCenter();
+center.lat += 0.25;
 
-        .openOn(map);
+L.popup({ maxWidth: 560 })
+  .setLatLng(center)
+  .setContent(
+    `<div class="province-title">${PROVINCE_NAMES[key] || display}</div>${badge}<ul>${items}</ul>`
+  )
+  .openOn(map);
+
     });
     l.on("mouseover", () => l.setStyle({ fillOpacity: 0.55, weight: 2 }));
     l.on("mouseout",  () => l.setStyle({ fillOpacity: 0.40, weight: 1 }));
