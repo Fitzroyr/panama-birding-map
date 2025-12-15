@@ -28,22 +28,10 @@ html, body { height:100%; margin:0; font-family: system-ui, -apple-system, Segoe
   border-radius:3px; margin-right:8px;
   border:1px solid rgba(0,0,0,0.25);
 }
-.province-title { font-weight:800; margin-bottom:6px; }
-ul { margin:0; padding-left:18px; }
-li { margin:4px 0; }
-  .province-title {
-  white-space: normal;
-}
-
-.province-title::after {
-  content: "";
-}
 .province-title {
-  font-weight: bold;
-}
-
-.province-title span {
-  display: inline;
+  font-weight: 800;
+  margin-bottom: 6px;
+  white-space: normal;
 }
 
 .badge {
@@ -169,7 +157,7 @@ L.geoJSON(PROVINCES, {
       const items = list.map(x => `<li>${x}</li>`).join("");
       L.popup({ maxWidth: 560 })
         .setLatLng(e.latlng)
-        .setContent(`<div class="province-title">${display}</div>${badge}<ul>${items}</ul>`)
+        .setContent(`<div class="province-title">${display.replace(/([a-z])([A-Z])/g, "$1 $2")}</div>${badge}<ul>${items}</ul>`)
         .openOn(map);
     });
     l.on("mouseover", () => l.setStyle({ fillOpacity: 0.55, weight: 2 }));
