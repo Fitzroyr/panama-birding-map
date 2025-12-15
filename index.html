@@ -81,7 +81,8 @@ const DISPLAY_NAMES = {
   "embera": "Emberá-Wounaan",
   "ngobebugle": "Ngöbe-Buglé"
 };
-  const title = DISPLAY_NAMES[key] || key;
+const title = display.replace(/([a-z])([A-Z])/g, "$1 $2");
+
 
   
 const HOTSPOTS = {
