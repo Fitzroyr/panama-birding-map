@@ -162,21 +162,23 @@ L.geoJSON(PROVINCES, {
     };
   },
   onEachFeature: (f, l) => {
-    const display = f.properties?.NAME_1 || f.properties?.name || "Province";
-    const key = norm(display);
-    const title = DISPLAY_NAMES[key] || display;
-    l.on("click", e => {
-      const list = HOTSPOTS[key] || ["No hotspots listed yet for this name."];
-      const badge = (key === "panama" || key === "colon")
-        ? '<div class="badge">Canal Zone sites are shared between Panamá & Colón</div>'
-        : '';
-      const items = list.map(x => `<li>${x}</li>`).join("");
-      L.popup({ maxWidth: 560 })
-        .setLatLng(e.latlng)
-        .setContent(`<div class="province-title">${title}</div>${badge}<ul>${items}</ul>`)
-        .openOn(map);
-    });
-    }
+  const display = f.properties?.NAME_1 || f.properties?.name || "Province";
+  const key = norm(display);
+
+  l.on("click", e => {
+    const list = HOTSPOTS[key] || ["No hotspots listed yet for this name."];
+    const items = list.map(x => `<li>${x}</li>`).join("");
+
+    L.popup({ maxWidth: 560 })
+      .setLatLng(e.latlng)
+      .setContent(
+        `<div class="province-title">${display}</div>
+         <ul>${items}</ul>`
+      )
+      .openOn(map);
+  });
+}
+
     l.on("mouseover", () => l.setStyle({ fillOpacity: 0.55, weight: 2 }));
     l.on("mouseout",  () => l.setStyle({ fillOpacity: 0.40, weight: 1 }));
   }
