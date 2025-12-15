@@ -31,6 +31,21 @@ html, body { height:100%; margin:0; font-family: system-ui, -apple-system, Segoe
 .province-title { font-weight:800; margin-bottom:6px; }
 ul { margin:0; padding-left:18px; }
 li { margin:4px 0; }
+  .province-title {
+  white-space: normal;
+}
+
+.province-title::after {
+  content: "";
+}
+.province-title {
+  font-weight: bold;
+}
+
+.province-title span {
+  display: inline;
+}
+
 .badge {
   display:inline-block; margin: 0 0 8px 0;
   padding: 4px 8px; border-radius: 999px;
