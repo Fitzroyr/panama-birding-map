@@ -67,7 +67,7 @@ const MASK = {"type": "Feature", "properties": {}, "geometry": {"type": "Polygon
 function norm(s) {
   return (s || "")
     .normalize("NFD").replace(/\p{Diacritic}/gu,"")
-    .replace(/\s+/g,"")
+    display.replace(/(?!^)([A-ZÁÉÍÓÚÑ])/g, " $1")
     .toLowerCase();
 }
 
@@ -157,7 +157,7 @@ L.geoJSON(PROVINCES, {
       const items = list.map(x => `<li>${x}</li>`).join("");
       L.popup({ maxWidth: 560 })
         .setLatLng(e.latlng)
-        .setContent(`<div class="province-title">${display.replace(/([a-z])([A-Z])/g, "$1 $2")}</div>${badge}<ul>${items}</ul>`)
+        .setContent(`<div class="province-title">${display.replace(/(?!^)([A-ZÁÉÍÓÚÑ])/g, " $1")}</div>${badge}<ul>${items}</ul>`)
         .openOn(map);
     });
     l.on("mouseover", () => l.setStyle({ fillOpacity: 0.55, weight: 2 }));
