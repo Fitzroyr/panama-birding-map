@@ -197,10 +197,12 @@ const map = L.map("map", {
 
   fullscreenControl: true,
   fullscreenControlOptions: {
-    position: 'topright'
+    position: 'topright',
+    pseudoFullscreen: true
   }
 
 }).setView([8.6, -80.0], 7);
+
 
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
