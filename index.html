@@ -97,49 +97,116 @@ function norm(s) {
 }
 
 const HOTSPOTS = {
-  "panama": [
-  "🏙️🚶 <strong>Panama City</strong>: Metropolitan Natural Park, Parque Omar, Cinta Costera / Panama Bay",
-  "🦅 <strong>Cerro Ancón</strong> — raptor migration lookout",
-  "🌳 <strong>Canal Zone (Panamá side)</strong>: Summit & Gamboa access (shared Soberanía / Pipeline corridor)",
-  "🌄 <strong>Cerro Azul</strong> — foothill cloud-forest edge, tanagers, hummingbirds, raptors"
+ panama: [
+  "🏙🌳 Parque Natural Metropolitano",
+  "🌳 Canopy Tower",
+  "💧 Ammo Dump Ponds",
+  "🌳 Gamboa Rainforest Reserve",
+  "💧 Summit Ponds",
+  "🏙🌳 Cerro Ancón",
+  "🏙🏝 Cinta Costera / Panama Bay",
+  "🏙🌳 Parque Omar",
+  "🌳 PN Camino de Cruces",
+  "🌳 Old Gamboa Road South"
+],
+
+  colon: [
+  "🌳 Pipeline Road (PN Soberanía)",
+  "🌳 Semaphore Hill Road",
+  "🌳 Plantation Road",
+  "🌳💧 Juan Grande Creek",
+  "🌳💧 Pipeline Waterfall Trail",
+  "🌳 Panama Rainforest Discovery Center",
+  "🌳 Achiote Road",
+  "🌳💧 St. Marys’ Catchment",
+  "🌳 Soberanía National Park (general)",
+  "💧🌳 Lago Gatún (Atlantic side)"
 ],
 
 
-  "colon": [
-  "🌳 <strong>Soberanía National Park</strong> — Pipeline Road (shared Canal Zone access)",
-  "🌊 <strong>Caribbean coast & mangroves</strong> — seabirds and coastal species"
+  panamaoeste: [
+  "⛰ Altos del María (900–1100 m)",
+  "🌳 Mata Ahogado",
+  "🌳 Camino a Mata Ahogado",
+  "🌳 Camino Mata Ahogados",
+  "⛰🌳 PN Altos de Campana",
+  "⛰ La Halconera",
+  "🌳 Campana Road (general)",
+  "🌳 Río Chame foothills",
+  "🌳 Altos del María access roads",
+  "⛰🌳 Campana lookout areas"
 ],
 
-  "panamaoeste": [
-  "🌊🌳 <strong>Chame & coastal wetlands</strong> — shorebirds, waterbirds",
-  "🌄 <strong>Campana area</strong> — foothill species and mixed flocks"
+
+  cocle: [
+  "⛰ El Valle de Antón (general)",
+  "⛰ Cerro Gaital",
+  "🌳 Canopy Lodge",
+  "🌳 Chorro Macho",
+  "🌳 Camino a El Salto",
+  "🌳 Paraíso Birding Paradise",
+  "🌳 Tinamou Cottage",
+  "🌳 Hotel y Restaurante Avicar",
+  "🌳⛰ PN Omar Torrijos (El Copé)",
+  "💧 Santa Clara / Sabanas de Coclé"
 ],
 
-  "cocle": [
-  "🌄🌳 <strong>El Valle de Antón</strong> — foothill forest, hummingbirds, tanagers",
-  "🌊 <strong>Aguadulce wetlands</strong> — waterbirds and shorebirds"
+
+  chiriqui: [
+  "⛰ Sendero Los Quetzales (Boquete)",
+  "⛰ Finca Lérida",
+  "⛰ Mount Totumas Cloud Forest Reserve",
+  "⛰ Boquete (Área General)",
+  "💧⛰ Humedal Lagunas de Volcán",
+  "⛰ Guadalupe – Cabañas Los Quetzales",
+  "⛰ Finca Candelario",
+  "⛰ Finca 3Y",
+  "🏝 Finca Mena Bird Island",
+  "⛰🌳 PILA – Estación Las Nubes"
 ],
 
-  "chiriqui": [
-  "🌄🌳 <strong>Boquete</strong> — foothill birding, hummingbirds, mixed flocks",
-  "🌄 <strong>Volcán & Bambito</strong> — highlands and cloud forest",
-  "🦅 <strong>Highland ridges</strong> — raptors and migration"
+
+  bocasdeltoro: [
+  "🏝🌳 Tranquilo Bay / Isla Bastimentos",
+  "💧🏝 San San–Pond Sak Wetlands",
+  "🏝 Isla Popa",
+  "🏝 Isla Pájaros (Swan Cay)",
+  "🌳 Bosque Protector Palo Seco",
+  "💧🏝 Río Changuinola Estuary",
+  "🌳 Camino Punta Róbalo – Palma Real",
+  "🌳💧 Willie Mazu Bridge – BPPS",
+  "🏝 Isla Venado Canal",
+  "🌳 Divisoria Continental Road (BPPS)"
 ],
 
-  "bocasdeltoro": [
-  "🏝️🌳 <strong>Isla Colón & Bastimentos</strong> — island lowland forest and endemics",
-  "🌊 <strong>Coastal mangroves</strong> — waterbirds and seabirds"
+
+  veraguas: [
+  "🌳 Reserva San Francisco",
+  "⛰ La Mesa",
+  "🌳💧 Camino La Mesa – Río Indio",
+  "🌳 Cara Iguana",
+  "🌳 Rinconcito de Macca Bite",
+  "🌳 Central Veraguas foothills",
+  "🌳 Río Indio watershed",
+  "🌳 Santa Fe NP foothills",
+  "🌳 Veraguas interior forest roads",
+  "🌳 Veraguas forest trails"
 ],
 
-  "veraguas": [
-  "🏝️🌿 <strong>Coiba Island National Park</strong> — offshore island, exceptional seabirds and endemics",
-  "🌄🌳 <strong>Santa Fe / La Yeguada</strong> — foothills and forest"
+
+  darien: [
+  "🌳⛰ PN Darién – Estación Pirre (Rancho Frío)",
+  "🌳 Canopy Camp",
+  "🌳💧 Río Chucunaque",
+  "🌳 Yaviza Forest",
+  "💧 Yaviza Wetlands",
+  "🌳 Nuevo Vigía Emberá",
+  "🌳 Darién foothill trails",
+  "🌳 Roads near Yaviza",
+  "🌳 Eastern Darién lowlands",
+  "🌳 Darién forest edges"
 ],
 
-  "darien": [
-  "🌳 <strong>Darién National Park</strong> — remote lowland rainforest, exceptional diversity",
-  "🌊 <strong>Wetlands & river systems</strong> — waterbirds and forest-edge species"
-],
 
   "herrera": [
   "🌊 <strong>Coastal wetlands & estuaries</strong> — shorebirds and waterbirds",
