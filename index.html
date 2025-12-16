@@ -231,7 +231,8 @@ L.geoJSON(PROVINCES, {
         : '';
       const items = list.map(x => `<li>${x}</li>`).join("");
       L.popup({ maxWidth: 560 })
-        .setLatLng(e.latlng)
+        .setLatLng(map.getCenter())
+
         .setContent(
   `<div class="province-title">${PROVINCE_NAMES[key] || display}</div>${badge}<ul>${items}</ul>`
 )
