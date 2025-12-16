@@ -315,7 +315,7 @@ const badge = (key === "panama" || key === "colon")
 const c = map.getCenter();
 const popupLatLng = L.latLng(c.lat + 0.25, c.lng);
 
-L.popup({ maxWidth: 560 })
+//L.popup({ maxWidth: 560 })
   .setLatLng(popupLatLng)
   .setContent(
     `<div class="province-title">${PROVINCE_NAMES[key] || display}</div>${badge}${bodyHTML}`
