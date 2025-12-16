@@ -97,76 +97,159 @@ function norm(s) {
 }
 
 const HOTSPOTS = {
-  "panama": [
-  "🏙️🚶 <strong>Panama City</strong>: Metropolitan Natural Park, Parque Omar, Cinta Costera / Panama Bay",
-  "🦅 <strong>Cerro Ancón</strong> — raptor migration lookout",
-  "🌳 <strong>Canal Zone (Panamá side)</strong>: Summit & Gamboa access (shared Soberanía / Pipeline corridor)",
-  "🌄 <strong>Cerro Azul</strong> — foothill cloud-forest edge, tanagers, hummingbirds, raptors"
-],
 
+  panama: `
+  <ul>
+    <li><strong>Panama City – Urban Birding Core</strong>
+      <ul>
+        <li>Parque Natural Metropolitano</li>
+        <li>Parque Omar</li>
+        <li>Cerro Ancón</li>
+        <li>Cinta Costera & Panama Bay</li>
+        <li>Biomuseo & Amador Causeway</li>
+        <li>Casco Viejo & Panamá Viejo</li>
+      </ul>
+    </li>
+    <li><strong>Gamboa / Summit Area</strong>
+      <ul>
+        <li>Canopy Tower</li>
+        <li>Ammo Dump Ponds</li>
+        <li>Summit Ponds</li>
+        <li>Old Gamboa Road South</li>
+        <li>Sendero La Chunga</li>
+        <li>Gamboa Marina</li>
+        <li>Camino al Teleférico</li>
+      </ul>
+    </li>
+    <li>Miraflores Locks</li>
+    <li>Río Tortí</li>
+    <li>Bayano Lake</li>
+  </ul>
+  `,
 
-  "colon": [
-  "🌳 <strong>Soberanía National Park</strong> — Pipeline Road (shared Canal Zone access)",
-  "🌊 <strong>Caribbean coast & mangroves</strong> — seabirds and coastal species"
-],
+  colon: `
+  <ul>
+    <li><strong>Pipeline Road / Soberanía National Park</strong>
+      <ul>
+        <li>Pipeline Road (general)</li>
+        <li>Plantation Road</li>
+        <li>Semaphore Hill Road</li>
+        <li>Juan Grande Creek</li>
+        <li>Pipeline Waterfall Trail</li>
+      </ul>
+    </li>
+    <li>Panama Rainforest Discovery Center</li>
+    <li>Achiote Road</li>
+    <li>St. Marys’ Catchment</li>
+  </ul>
+  `,
 
-  "panamaoeste": [
-  "🌊🌳 <strong>Chame & coastal wetlands</strong> — shorebirds, waterbirds",
-  "🌄 <strong>Campana area</strong> — foothill species and mixed flocks"
-],
+  cocle: `
+  <ul>
+    <li><strong>El Valle de Antón</strong>
+      <ul>
+        <li>El Valle (general area)</li>
+        <li>Cerro Gaital</li>
+        <li>Chorro Macho</li>
+        <li>Camino a El Salto</li>
+      </ul>
+    </li>
+    <li><strong>Canopy Lodge Area</strong>
+      <ul>
+        <li>Canopy Lodge</li>
+        <li>Canopy Lodge – Fruit Feeder Cam</li>
+        <li>Tinamou Cottage</li>
+        <li>Paraíso Birding Paradise</li>
+        <li>Hotel y Restaurante Avicar</li>
+      </ul>
+    </li>
+    <li>Carretera a Juan Hombrón</li>
+    <li>Santa Clara / Sabanas de Coclé</li>
+    <li>PN Omar Torrijos (El Copé)</li>
+  </ul>
+  `,
 
-  "cocle": [
-  "🌄🌳 <strong>El Valle de Antón</strong> — foothill forest, hummingbirds, tanagers",
-  "🌊 <strong>Aguadulce wetlands</strong> — waterbirds and shorebirds"
-],
+  chiriqui: `
+  <ul>
+    <li><strong>Boquete Highlands</strong>
+      <ul>
+        <li>Boquete (general area)</li>
+        <li>Sendero Los Quetzales</li>
+        <li>Finca Lérida</li>
+        <li>Mount Totumas Cloud Forest Reserve</li>
+        <li>Guadalupe – Cabañas Los Quetzales</li>
+      </ul>
+    </li>
+    <li>Humedal Lagunas de Volcán</li>
+    <li>Finca Candelario</li>
+    <li>Finca 3Y</li>
+    <li>Finca Mena Bird Island</li>
+    <li>PILA – Estación Las Nubes</li>
+  </ul>
+  `,
 
-  "chiriqui": [
-  "🌄🌳 <strong>Boquete</strong> — foothill birding, hummingbirds, mixed flocks",
-  "🌄 <strong>Volcán & Bambito</strong> — highlands and cloud forest",
-  "🦅 <strong>Highland ridges</strong> — raptors and migration"
-],
+  bocasdeltoro: `
+  <ul>
+    <li><strong>Island & Coastal Birding</strong>
+      <ul>
+        <li>Tranquilo Bay / Isla Bastimentos</li>
+        <li>Isla Popa / Isla Venado Canal</li>
+        <li>Isla Pájaros (Swan Cay)</li>
+      </ul>
+    </li>
+    <li><strong>Mainland & Wetlands</strong>
+      <ul>
+        <li>San San–Pond Sak (Changuinola & California)</li>
+        <li>Río Changuinola Estuary</li>
+        <li>Camino Punta Róbalo – Palma Real</li>
+        <li>Willie Mazu Bridge – BPPS</li>
+        <li>Bosque Protector Palo Seco</li>
+      </ul>
+    </li>
+  </ul>
+  `,
 
-  "bocasdeltoro": [
-  "🏝️🌳 <strong>Isla Colón & Bastimentos</strong> — island lowland forest and endemics",
-  "🌊 <strong>Coastal mangroves</strong> — waterbirds and seabirds"
-],
+  panamaoeste: `
+  <ul>
+    <li><strong>Altos del María</strong>
+      <ul>
+        <li>Altos del María (900–1100 m)</li>
+        <li>Mata Ahogado</li>
+        <li>Camino a Mata Ahogado</li>
+        <li>Camino Mata Ahogados</li>
+      </ul>
+    </li>
+    <li>Parque Nacional Altos de Campana</li>
+    <li>La Halconera</li>
+  </ul>
+  `,
 
-  "veraguas": [
-  "🏝️🌿 <strong>Coiba Island National Park</strong> — offshore island, exceptional seabirds and endemics",
-  "🌄🌳 <strong>Santa Fe / La Yeguada</strong> — foothills and forest"
-],
+  veraguas: `
+  <ul>
+    <li>Reserva San Francisco</li>
+    <li>La Mesa</li>
+    <li>Camino La Mesa – Río Indio</li>
+    <li>Cara Iguana</li>
+    <li>Rinconcito de Macca Bite</li>
+  </ul>
+  `,
 
-  "darien": [
-  "🌳 <strong>Darién National Park</strong> — remote lowland rainforest, exceptional diversity",
-  "🌊 <strong>Wetlands & river systems</strong> — waterbirds and forest-edge species"
-],
-
-  "herrera": [
-  "🌊 <strong>Coastal wetlands & estuaries</strong> — shorebirds and waterbirds",
-  "🌾 <strong>Agricultural landscapes</strong> — open-country species"
-],
-
-  "lossantos": [
-  "🌊🦅 <strong>Azuero Peninsula coast</strong> — shorebirds and migration",
-  "🌾 <strong>Dry forest remnants</strong> — regional specialties"
-],
-
-  "kunayala": [
-  "🏝️🌊 <strong>San Blas Islands</strong> — seabirds, coastal species",
-  "🌳 <strong>Mainland forest areas</strong> — lowland Caribbean forest birds"
-],
-
-  "ngobebugle": [
-  "🌄🌳 <strong>Comarca highlands</strong> — cloud forest species and endemics",
-  "🌳 <strong>Remote forest areas</strong> — limited access, high reward"
-],
-
-  "embera": [
-  "🌳 <strong>Lowland rainforest</strong> — rich forest birdlife",
-  "🌊 <strong>River corridors</strong> — kingfishers, herons, forest edge species"
-],
-
+  darien: `
+  <ul>
+    <li><strong>Darién National Park</strong>
+      <ul>
+        <li>Estación Pirre (Rancho Frío)</li>
+        <li>Canopy Camp</li>
+      </ul>
+    </li>
+    <li>Río Chucunaque</li>
+    <li>Yaviza Forest</li>
+    <li>Yaviza Wetlands</li>
+    <li>Nuevo Vigía Emberá</li>
+  </ul>
+  `
 };
+
 
 const COLORS = {
   "Urban": "#F28C00",
@@ -222,22 +305,23 @@ L.geoJSON(PROVINCES, {
     };
   },
   onEachFeature: (f, l) => {
-    const display = f.properties?.NAME_1 || f.properties?.name || "Province";
-    const key = norm(display);
-    l.on("click", e => {
-      const list = HOTSPOTS[key] || ["No hotspots listed yet for this name."];
-      const badge = (key === "panama" || key === "colon")
-        ? '<div class="badge">Canal Zone sites are shared between Panamá & Colón</div>'
-        : '';
-      const items = list.map(x => `<li>${x}</li>`).join("");
-      L.popup({ maxWidth: 560 })
-        .setLatLng(map.getCenter())
+  const raw = HOTSPOTS[key];
+  const bodyHTML = raw || "<ul><li>No hotspots listed yet.</li></ul>";
 
-        .setContent(
-  `<div class="province-title">${PROVINCE_NAMES[key] || display}</div>${badge}<ul>${items}</ul>`
-)
+const badge = (key === "panama" || key === "colon")
+  ? '<div class="badge">Canal Zone sites are shared between Panamá & Colón</div>'
+  : '';
 
-        .openOn(map);
+const c = map.getCenter();
+const popupLatLng = L.latLng(c.lat + 0.25, c.lng);
+
+L.popup({ maxWidth: 560 })
+  .setLatLng(popupLatLng)
+  .setContent(
+    `<div class="province-title">${PROVINCE_NAMES[key] || display}</div>${badge}${bodyHTML}`
+  )
+  .openOn(map);
+
     });
     l.on("mouseover", () => l.setStyle({ fillOpacity: 0.55, weight: 2 }));
     l.on("mouseout",  () => l.setStyle({ fillOpacity: 0.40, weight: 1 }));
